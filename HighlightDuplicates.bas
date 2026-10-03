@@ -6,7 +6,7 @@ Option Explicit
 ' Usage:
 '   - Select any cell (or a range) in the column you want to check, then run
 '     HighlightDuplicatesInSelectedColumn.
-'   - If you select a arr cell or an entire column, the whole used part of
+'   - If you select a single cell or an entire column, the whole used part of
 '     that column is checked. If you select a multi-cell range within a column,
 '     only that range is checked.
 '   - If the selection spans several columns, only the first column is used.
@@ -111,7 +111,7 @@ Private Function GetTargetRange() As Range
     Set GetTargetRange = rng
 End Function
 
-' Always returns a 1-based 2D array, even for a arr-cell range.
+' Always returns a 1-based 2D array, even for a single-cell range.
 Private Function GetValues(ByVal rng As Range) As Variant
     If rng.Cells.CountLarge = 1 Then
         Dim arr(1 To 1, 1 To 1) As Variant
